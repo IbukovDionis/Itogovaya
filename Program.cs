@@ -18,6 +18,7 @@
         string ResStr = "";
         for (int i = 0; i < size; i++)
         {
+            Console.Write($"    Введите строчку массива №{i+1}: ");
             Input[i] = Console.ReadLine();
             if (i < size-1) ResStr = ResStr +"['" + Input[i]+ "'], " ;
             // будем проверять что в веденной строке 3 или более символов
