@@ -7,7 +7,7 @@
         // массив с исходными данными и рассив с результатами
         
         // для начала дадим возможность пользователю ввести размер исходного массива и значений массива
-        Console.WriteLine("Введите количество элементов:");
+        Console.Write("Введите количество элементов: ");
         int size =  Convert.ToInt32(Console.ReadLine());
         // создаем массивы размером size
         string[] Input = new string[size];
@@ -15,9 +15,11 @@
         // объявим счетчик дла подсчета подходящих строк
         int count = 0;
         // заполним массив различными строками с помощью цикла
+        string ResStr = "";
         for (int i = 0; i < size; i++)
         {
             Input[i] = Console.ReadLine();
+            if (i < size-1) ResStr = ResStr +"['" + Input[i]+ "'], " ;
             // будем проверять что в веденной строке 3 или более символов
             if (Input[i].Length >= 3)
             {
@@ -25,12 +27,18 @@
                 count++;
             }
         }
-        // Теперь выводим результат - массив со строками в которых не меньше 3 символов
-        for (int i = 0; i<=count; i++)
+        
+        ResStr = ResStr +"['"+Input[size-1]+"'] -> ['";
+
+        for (int i = 0; i<count-1; i++)
         {
-            Console.Write($"[{Result[i]}],");
+            ResStr = ResStr + Result[i] + "'], ['";
         }
 
+        ResStr = ResStr + Result[count-1] + "'].";
+        // Выводим результат!
+        Console.WriteLine("Результат работы программы: ");  
+        Console.Write(ResStr);
 
     }
 
