@@ -22,7 +22,7 @@
             Input[i] = Console.ReadLine();
             if (i < size-1) ResStr = ResStr +"['" + Input[i]+ "'], " ;
             // будем проверять что в веденной строке 3 или более символов
-            if (Input[i].Length >= 3)
+            if (Input[i].Length <= 3)
             {
                 Result[count] = Input[i];
                 count++;
