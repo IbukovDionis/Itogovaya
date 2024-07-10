@@ -29,17 +29,20 @@
             }
         }
         
-        ResStr = ResStr +"['"+Input[size-1]+"'] -> ['";
-
-        for (int i = 0; i<count-1; i++)
+        ResStr = ResStr +"['"+Input[size-1]+"'] -> ";
+        // Если есть подходящие строки то выводим
+        if (count > 0)
         {
-            ResStr = ResStr + Result[i] + "'], ['";
+            for (int i = 0; i<count-1; i++)
+            {
+                ResStr = ResStr + "['"+Result[i] + "'], ";
+            }
+            ResStr = ResStr + "['" + Result[count-1] + "'].";
+            // Выводим результат!
+            Console.WriteLine("Результат работы программы: ");  
+            Console.Write(ResStr);
         }
-
-        ResStr = ResStr + Result[count-1] + "'].";
-        // Выводим результат!
-        Console.WriteLine("Результат работы программы: ");  
-        Console.Write(ResStr);
+        else Console.WriteLine(ResStr+"[].");
 
     }
 
